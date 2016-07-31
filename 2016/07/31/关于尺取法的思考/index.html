@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="-算法 -尺取法," />
+  <meta name="keywords" content="算法,尺取法,Codeforces-701C," />
 
 
 
@@ -84,16 +84,27 @@
 
 
 
-<meta name="description" content="做我说过的，说我能做的。">
+<meta name="description" content="定义首先，尺取法就是形如一把尺子的方法，去一块一块的截取你所需要的序列
+举例分析接下来将由一个经典的尺取法例子和codeforces上的一道题对尺取法进行分析。由简单起见，从经典的例子开始分析。
+经典的例子给定一个长度为n的数列a1，a2……an及整数S，求不小于S的连续子序列的和的最小值。若解肯定存在。
+123input  n=10，S=15  a=&amp;#123;5,1,3,5,10,7,4,9,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于尺取法的思考">
 <meta property="og:url" content="https://yuhaomin.github.io/2016/07/31/关于尺取法的思考/index.html">
 <meta property="og:site_name" content="俞浩敏的博客">
-<meta property="og:description" content="做我说过的，说我能做的。">
-<meta property="og:updated_time" content="2016-07-31T11:58:31.414Z">
+<meta property="og:description" content="定义首先，尺取法就是形如一把尺子的方法，去一块一块的截取你所需要的序列
+举例分析接下来将由一个经典的尺取法例子和codeforces上的一道题对尺取法进行分析。由简单起见，从经典的例子开始分析。
+经典的例子给定一个长度为n的数列a1，a2……an及整数S，求不小于S的连续子序列的和的最小值。若解肯定存在。
+123input  n=10，S=15  a=&amp;#123;5,1,3,5,10,7,4,9,">
+<meta property="og:image" content="https://yuhaomin.github.io/uploads/images/1-1尺取法.png">
+<meta property="og:updated_time" content="2016-07-31T13:09:51.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于尺取法的思考">
-<meta name="twitter:description" content="做我说过的，说我能做的。">
+<meta name="twitter:description" content="定义首先，尺取法就是形如一把尺子的方法，去一块一块的截取你所需要的序列
+举例分析接下来将由一个经典的尺取法例子和codeforces上的一道题对尺取法进行分析。由简单起见，从经典的例子开始分析。
+经典的例子给定一个长度为n的数列a1，a2……an及整数S，求不小于S的连续子序列的和的最小值。若解肯定存在。
+123input  n=10，S=15  a=&amp;#123;5,1,3,5,10,7,4,9,">
+<meta name="twitter:image" content="https://yuhaomin.github.io/uploads/images/1-1尺取法.png">
 
 
 
@@ -284,7 +295,7 @@
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">-算法</span>
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -323,7 +334,28 @@
       
 
       
-        
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>首先，尺取法就是形如一把尺子的方法，去一块一块的截取你所需要的序列</p>
+<h1 id="举例分析"><a href="#举例分析" class="headerlink" title="举例分析"></a>举例分析</h1><p>接下来将由一个经典的尺取法例子和codeforces上的一道题对尺取法进行分析。<br>由简单起见，从经典的例子开始分析。</p>
+<h2 id="经典的例子"><a href="#经典的例子" class="headerlink" title="经典的例子"></a>经典的例子</h2><p>给定一个长度为n的数列a1，a2……an及整数S，求不小于S的连续子序列的和的最小值。若解肯定存在。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">input  </div><div class="line">n=<span class="number">10</span>，S=<span class="number">15</span>  </div><div class="line">a=&#123;<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">8</span>&#125;</div></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>本例尺取法示意图如下：<br><img src="/uploads/images/1-1尺取法.png" alt="尺取法示意图"><br>取得满足条件的最小序列，然后依次将i向右移动，若i向左移动的过程中序列仍然满足条件，则j不移动，否则将j也向右移动。在移动的过程中记录j-i的最小值.</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>    </span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </div><div class="line"></div><div class="line"><span class="keyword">int</span> n;   </div><div class="line"><span class="keyword">int</span> a[<span class="number">200000</span>];  </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">int</span> n,max,sum;  </div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;max;  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span> ; k &lt; n ; k++)  </div><div class="line">        <span class="built_in">cin</span>&gt;&gt;a[k];  </div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="number">0</span>,sum = <span class="number">0</span>,ans = n+<span class="number">1</span>;  </div><div class="line">    <span class="keyword">while</span>(<span class="number">1</span>)  </div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">while</span>(j &lt; n &amp;&amp; sum &lt; max)<span class="comment">//sum&lt;max时不断循环，使得取得满足条件的序列  </span></div><div class="line">        sum += a[j++];  </div><div class="line">        <span class="keyword">if</span>(sum &lt; max)    <span class="keyword">break</span>;   <span class="comment">//若j&gt;=n且sum小于max则输出  </span></div><div class="line">        ans = min(j-i,ans);     <span class="comment">//记录最小的尺度  </span></div><div class="line">        sum -= a[i++];          <span class="comment">//i向右移动  </span></div><div class="line">    &#125;  </div><div class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;  </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="Codeforces-上实例"><a href="#Codeforces-上实例" class="headerlink" title="Codeforces 上实例"></a>Codeforces 上实例</h2><h3 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h3><p>C. They Are Everywhere<br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>Sergei B., the young coach of Pokemons, has found the big house which consists of n flats ordered in a row from left to right. It is possible to enter each flat from the street. It is possible to go out from each flat. Also, each flat is connected with the flat to the left and the flat to the right. Flat number 1 is only connected with the flat number 2 and the flat number n is only connected with the flat number n - 1.</p>
+<p>There is exactly one Pokemon of some type in each of these flats. Sergei B. asked residents of the house to let him enter their flats in order to catch Pokemons. After consulting the residents of the house decided to let Sergei B. enter one flat from the street, visit several flats and then go out from some flat. But they won’t let him visit the same flat more than once.</p>
+<p>Sergei B. was very pleased, and now he wants to visit as few flats as possible in order to collect Pokemons of all types that appear in this house. Your task is to help him and determine this minimum number of flats he has to visit.</p>
+<p>Input<br>The first line contains the integer n (1 ≤ n ≤ 100 000) — the number of flats in the house.</p>
+<p>The second line contains the row s with the length n, it consists of uppercase and lowercase letters of English alphabet, the i-th letter equals the type of Pokemon, which is in the flat number i.</p>
+<p>Output<br>Print the minimum number of flats which Sergei B. should visit in order to catch Pokemons of all types which there are in the house.</p>
+<p>Examples<br>input<br>3<br>AaA<br>output<br>2<br>input<br>7<br>bcAAcbc<br>output<br>3<br>input<br>6<br>aaBCCe<br>output<br>5</p>
+<h3 id="原题分析"><a href="#原题分析" class="headerlink" title="原题分析"></a>原题分析</h3><p>题意大致：输入n长度的字母序列，求出包含所有种类字母的最小序列。和上一题截图思路一致。</p>
+<p>思路：</p>
+<ol>
+<li>首先记录字母序列的包含所有种类个数</li>
+<li>用尺取法从左开始取得包含满足所有种类字母的序列，记录序列长度</li>
+<li>一次将i向右移动（下列的代码中的i用end代替）若i移动的过程中序列仍然满足包含所有种类的长度，则记录序列长度；否则将j向右移动直到序列满足包含所有种类（下列的代码中j用first代替）。</li>
+</ol>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span>    </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span>   </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span>  </span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100001</span>;  </div><div class="line"><span class="meta"># <span class="meta-keyword">define</span> PI 3.141592657  </span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">2e5</span>+<span class="number">7</span>;    </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">1e9</span>;    </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">int</span> n;  </div><div class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n)  </div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">char</span> a[N];  </div><div class="line">        <span class="keyword">int</span> letter[<span class="number">52</span>];  </div><div class="line">        <span class="keyword">int</span> type = <span class="number">0</span>;  </div><div class="line"></div><div class="line">        <span class="built_in">cin</span> &gt;&gt; a;  </div><div class="line"></div><div class="line">        <span class="built_in">memset</span>(letter, <span class="number">0</span>, <span class="keyword">sizeof</span>(letter));  </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)  </div><div class="line">        &#123;  </div><div class="line"></div><div class="line">            <span class="keyword">if</span>(letter[a[i]-<span class="string">'A'</span>]==<span class="number">0</span>&amp;&amp;a[i]&lt;<span class="string">'a'</span>)  </div><div class="line">            &#123;  </div><div class="line">                letter[a[i]-<span class="string">'A'</span>] = <span class="number">1</span>;  </div><div class="line">                type++;  </div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(letter[a[i]-<span class="string">'G'</span>]==<span class="number">0</span>&amp;&amp; a[i]&gt;=<span class="string">'a'</span>)&#123;  </div><div class="line">                letter[a[i]-<span class="string">'G'</span>] = <span class="number">1</span>;  </div><div class="line">                type++;  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line"></div><div class="line">        <span class="keyword">int</span> first = <span class="number">0</span>,end = <span class="number">0</span>, species = <span class="number">0</span>;   </div><div class="line">        <span class="keyword">int</span> letterflag[<span class="number">52</span>];  </div><div class="line">        <span class="keyword">int</span> ans = n+<span class="number">1</span>;  </div><div class="line">        <span class="built_in">memset</span>(letterflag,<span class="number">0</span>,<span class="keyword">sizeof</span>(letterflag));  </div><div class="line">        <span class="keyword">while</span> (<span class="number">1</span>)  </div><div class="line">        &#123;  </div><div class="line">            <span class="keyword">while</span> (first &lt; n &amp;&amp; species &lt; type)  </div><div class="line">            &#123;  </div><div class="line">                <span class="keyword">if</span>( a[first]&lt;<span class="string">'a'</span>)&#123;  </div><div class="line">                    <span class="keyword">if</span>(letterflag[a[first]-<span class="string">'A'</span>]==<span class="number">0</span> )&#123; species++; &#125;  </div><div class="line">                    letterflag[a[first]-<span class="string">'A'</span> ]++;   </div><div class="line">                    first ++;  </div><div class="line">                &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                    <span class="keyword">if</span>(letterflag[a[first]-<span class="string">'G'</span>]==<span class="number">0</span> )&#123; species++; &#125;  </div><div class="line">                    letterflag[a[first]-<span class="string">'G'</span> ]++;   </div><div class="line">                    first ++;  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">if</span>(species&lt;type)<span class="keyword">break</span>;  </div><div class="line">            ans = min(ans, first - end);  </div><div class="line">            <span class="keyword">if</span> (a[end]&lt;<span class="string">'a'</span>)  </div><div class="line">            &#123;  </div><div class="line">                <span class="keyword">if</span> (--letterflag[a[end]-<span class="string">'A'</span>] ==<span class="number">0</span>)  </div><div class="line">                &#123;  </div><div class="line">                    species --;  </div><div class="line">                &#125;  </div><div class="line">            &#125;<span class="keyword">else</span>&#123;  </div><div class="line">                <span class="keyword">if</span> (--letterflag[a[end]-<span class="string">'G'</span>] ==<span class="number">0</span>)  </div><div class="line">                &#123;  </div><div class="line">                    species --;  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">            end++;  </div><div class="line"></div><div class="line">        &#125;  </div><div class="line">        <span class="built_in">cout</span> &lt;&lt; ans ;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -344,7 +376,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法-尺取法/" rel="tag">#-算法 -尺取法</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/尺取法/" rel="tag">#尺取法</a>
+          
+            <a href="/tags/Codeforces-701C/" rel="tag">#Codeforces-701C</a>
           
         </div>
       
@@ -425,7 +461,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -434,7 +470,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -488,7 +524,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举例分析"><span class="nav-number">2.</span> <span class="nav-text">举例分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典的例子"><span class="nav-number">2.1.</span> <span class="nav-text">经典的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.1.1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.1.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-上实例"><span class="nav-number">2.2.</span> <span class="nav-text">Codeforces 上实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原题"><span class="nav-number">2.2.1.</span> <span class="nav-text">原题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原题分析"><span class="nav-number">2.2.2.</span> <span class="nav-text">原题分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -288,7 +288,7 @@
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">-算法</span>
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -329,8 +329,13 @@
       
         
           
-          
-          
+          定义首先，尺取法就是形如一把尺子的方法，去一块一块的截取你所需要的序列
+举例分析接下来将由一个经典的尺取法例子和codeforces上的一道题对尺取法进行分析。由简单起见，从经典的例子开始分析。
+经典的例子给定一个长度为n的数列a1，a2……an及整数S，求不小于S的连续子序列的和的最小值。若解肯定存在。
+123input  n=10，S=15  a=&#123;5,1,3,5,10,7,4,9,2,8&#125;
+分析本例尺取法示意图如下：取得满足条件的最小序列，然后依次将i向右移动，若i向左移动的过程中序列仍然满足条件，则j不移动，否则将j也向右移动。在移动的过程中记录j-i的最小值.
+代码1234567891011121314151617181920212223242526#include &lt;cstring&gt;    #include&lt;cmath&gt;    #in
+          ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/31/关于尺取法的思考/#more" rel="contents">
@@ -412,7 +417,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -421,7 +426,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
